@@ -502,6 +502,9 @@ def metric_cleanup():
 # For testing
 if __name__ == '__main__':
     logging.debug('running from cmd line')
+    # Ignore version checking
+    # top0012: get_lus_version() will not work as version file location has changed at least since lustre-client version 2.10
+    '''
     # check lustre version number
     version_num = get_lus_version()
     if version_num <= 2.2:
@@ -511,7 +514,8 @@ if __name__ == '__main__':
           input = raw_input('Press Enter to continue')
        except EOFError:
           pass
-    
+    '''
+
     metric_init({})
     while True:
         for d in descriptors:
